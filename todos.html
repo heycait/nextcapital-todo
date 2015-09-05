@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="css/todos.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
   </head>
 
   <body ng-controller="TodoCtrl">
@@ -39,8 +40,7 @@
       <ul id="sortable" class="list-unstyled">
         <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
           <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
-          <!-- change this to call a method that marks todo as complete -->
-          <span class="done-{{todo.is_complete}}">{{todo.description}}</span>
+          <span class="done-{{todo.is_complete}}" editable-text="todo.description">{{todo.description}}</span>
         </li>
       </ul>
     </div>
@@ -58,6 +58,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script type="text/javascript" src="js/todos.js"></script>
   <!-- // <script src="js/mandrill.js"></script> -->
+  <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
 </html>
 
 

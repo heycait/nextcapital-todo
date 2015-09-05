@@ -1,4 +1,4 @@
-angular.module('nextCapital', [])
+angular.module('nextCapital', ["xeditable"])
        .controller('TodoCtrl', function($scope, $http){
         $scope.todos = [];
 
@@ -22,7 +22,6 @@ angular.module('nextCapital', [])
         };
 
         $scope.markComplete = function(todo){
-          alert('you changed my box!');
           console.log(todo.is_complete)
 
           var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + todo.id;
@@ -32,11 +31,27 @@ angular.module('nextCapital', [])
             data: {api_token: sessionStorage.getItem('api_token'), todo: {description: $scope.formTodo, is_complete: todo.is_complete}}
           }).success(function(response){
             console.log(response)
-            debugger;
           })
+        };
+
+        $scope.editTodo = function(todo){
+          console.log(todo.is_complete);
+          console.log(todo.description);
+
+          alert('you edited me?!?!')
+
+          var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + todo.id;
+          $http({
+            method: 'PUT',
+            url: link,
+            data: {api_token: sessionStorage.getItem('api_token'), todo: {description: todo.description, is_complete: todo.is_complete}}
+          }).success(function(response){
+            console.log(response)
+            alert('you edited your todo!')
+          })
+        };
 
 
-        }
 
       // Doing it this way results in the error "please sign in first" compared to doing it with jQuery/Ajax
         // $scope.logout = function(){
@@ -54,7 +69,10 @@ angular.module('nextCapital', [])
         //     // window.location.href = '/nextcapital-todo/'
         //   });
         // }
-      });
+      })
+      .run(function(editableOptions) {
+          editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+        });
 
 $(function() {
   $( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
