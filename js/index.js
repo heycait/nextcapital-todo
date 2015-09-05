@@ -9,13 +9,17 @@ $(document).ready(function() {
       url: 'http://recruiting-api.nextcapital.com/users',
       data: form_data,
     }).done(function(response){
-      console.log(response);
 
       sessionStorage.setItem('api_token', response.api_token);
       sessionStorage.setItem('email', response.email);
       sessionStorage.setItem('id', response.id);
       sessionStorage.setItem('todos', response.todos);
 
+      var request = $.ajax({
+        method: 'POST',
+        url: 'http://recruiting-api.nextcapital.com/users/sign_in',
+        data: {email: response.email, password: response.password},
+      })
       window.location.href = '/todos.html'
       // window.location.href = '/nextcapital-todo/todos.html'
     });

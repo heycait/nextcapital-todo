@@ -1,6 +1,6 @@
 # NextCapital Todo List Challenge
 
-A todo list webapp that integrates with the RESTful JSON API provided by NextCapital (http://recruiting-api.nextcapital.com).
+A todo list webapp that integrates with the RESTful JSON API provided by NextCapital (http://recruiting-api.nextcapital.com). Built on with Angular, jQuery/AJAX, and jQueryUI.
 
 Source code: https://github.com/heycait/heycait.github.io/tree/master/nextcapital-todo
 Deployed: http://caitlyncodes.com/nextcapital-todo/
@@ -16,10 +16,10 @@ Users can:
 - [ ] Edit a todo
 - [ ] Mark todos as complete
 - [X] Reorder their todos (this is just client-side)
-- [ ] Feature of choice....??
+- [ ] Email todo list to someone
 
 
 ## Stretch Goals
 - [ ] Write tests
-- [ ] Prettify
+- [ ] Prettify-ish
 - [ ] Responsivefy
