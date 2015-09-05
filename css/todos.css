@@ -1,5 +1,5 @@
 #todo-list {
-  margin: 1em;
+  margin-top: 1em;
 }
 
 .done-true {
@@ -11,22 +11,18 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 60%;
+  width: 30%;
 }
 
 #sortable li {
-  margin: 0 5px 5px 5px;
-  padding: 5px;
-  font-size: 1.2em;
-  height: 1.5em;
-}
-
-html>body #sortable li {
-  height: 1.5em;
-  line-height: 1.2em;
+  margin: 0 5px 1px 5px;
+  padding: 0.25em;
+  font-size: 1em;
+  border: solid 1px #CCCCCC;
+  border-radius: 0.5em;
 }
 
 .ui-state-highlight {
-  height: 1.5em;
-  line-height: 1.2em;
+  height: 1.25em;
+  line-height: 1.25em;
 }

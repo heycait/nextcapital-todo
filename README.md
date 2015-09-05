@@ -15,7 +15,7 @@ Users can:
 - [X] Create new todos
 - [ ] Edit a todo
 - [ ] Mark todos as complete
-- [ ] Reorder their todos (this is just client-side)
+- [X] Reorder their todos (this is just client-side)
 - [ ] Feature of choice....??
 
 

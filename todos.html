@@ -6,7 +6,6 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.1/handlebars.min.js"></script> -->
       <link rel="stylesheet" href="css/todos.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -27,9 +26,9 @@
       <button ng-click="addTodo()" type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
     </form>
 
-    <div> <!-- ng-controller="TodoCtrl">-->
-      <ul id="sortable" class="list-unstyled" id="todo-list">
-        <li ng-repeat="todo in todos" class="ui-state-default">
+    <div id="todo-list">
+      <ul id="sortable" class="list-unstyled">
+        <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
           <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete()">
           <!-- change this to call a method that marks todo as complete -->
           <span class="done-{{todo.is_complete}}">{{todo.description}}</span>
