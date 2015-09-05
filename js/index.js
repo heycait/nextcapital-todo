@@ -16,7 +16,7 @@ $(document).ready(function() {
       sessionStorage.setItem('id', response.id);
       sessionStorage.setItem('todos', response.todos);
 
-      window.location.href = '/todos.html'
+      window.location.href = '/nextcapital-todo/todos.html'
     });
   });
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
       sessionStorage.setItem('id', response.id);
       sessionStorage.setItem('todos', response.todos);
 
-      window.location.href = '/todos.html'
+      window.location.href = '/nextcapital-todo/todos.html'
     });
   });
 });
