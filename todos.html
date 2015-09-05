@@ -7,7 +7,6 @@
       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
       <link rel="stylesheet" href="css/todos.css">
-      <script src="js/mandrill.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
@@ -27,13 +26,13 @@
 
     <h1>Your Todos</h1>
 
-    <form class="form-inline" id="add-todo">
+    <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
       <div class="form-group">
         <div class="input-group">
-          <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo">
+          <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
         </div>
       </div>
-      <button ng-click="addTodo()" type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
+      <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
     </form>
 
     <div id="todo-list">
@@ -58,6 +57,7 @@
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script type="text/javascript" src="js/todos.js"></script>
+  <!-- // <script src="js/mandrill.js"></script> -->
 </html>
 
 

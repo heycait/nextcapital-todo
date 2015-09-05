@@ -7,7 +7,7 @@ angular.module('nextCapital', [])
              .success(function(response){
                 $scope.todos = response;
              });
-// don't let it add if field is blank....
+
         $scope.addTodo = function(){
           alert('you clicked')
           $scope.todos.push({description: $scope.formTodo, is_complete: false});
