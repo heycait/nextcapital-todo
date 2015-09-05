@@ -16,7 +16,7 @@ Users can:
 - [ ] Edit a todo
 - [ ] Mark todos as complete
 - [X] Reorder their todos (this is just client-side)
-- [ ] Email todo list to someone
+- [ ] Email todo list
 
 
 ## Stretch Goals

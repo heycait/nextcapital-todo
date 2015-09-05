@@ -1,30 +1,36 @@
-require('dotenv').load();
-// Create a function to log the response from the Mandrill API
-function log(obj) {
-    $('#response').text(JSON.stringify(obj));
-}
+angular.module('nextCapital', [])
+       .controller('TodoCtrl', function($scope){
 
-// create a new instance of the Mandrill class with your API key
-// var m = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
-var m = new mandrill.Mandrill(process.env.API_KEY);
+        // Create a function to log the response from the Mandrill API
+        function log(obj) {
+            $('#response').text(JSON.stringify(obj));
+        }
 
-// create a variable for the API call parameters
-var params = {
-    "message": {
-        "from_email":"",
-        "to":[{"email":""}],
-        "subject": "Sending a text email from the Mandrill API",
-        "text": "I'm learning the Mandrill API at Codecademy."
-    }
-};
+        // create a new instance of the Mandrill class with your API key
+        var m = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
+        // var email = new mandrill.Mandrill(process.env.API_KEY);
 
-params.message.from_email = "";
-params.message.to[0].email = "";
+        // create a variable for the API call parameters
+        var params = {
+            "message": {
+                "from_email":"",
+                "to":[{"email":""}],
+                "subject": "Sending a text email from the Mandrill API",
+                "text": "I'm learning the Mandrill API at Codecademy."
+            }
+        };
 
-function sendTheMail() {
-    m.messages.send(params, function(result) {
-        log(result);
-    }, function(error) {
-        log(error);
+        params.message.from_email = sessionStorage.getItem('email');
+        params.message.to[0].email = $scope.emailAddress;
+
+        $scope.sendEmail = function(){
+            email.messages.send(params, function(result) {
+                log(result);
+            }, function(error) {
+                log(error);
+            });
+        }
     });
-}
+
+
+

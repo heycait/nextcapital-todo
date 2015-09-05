@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
       <link rel="stylesheet" href="css/todos.css">
+      <script src="js/mandrill.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
@@ -36,6 +37,14 @@
       </ul>
     </div>
 
+    <form class="form-inline" id="email-box">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List">
+        </div>
+      </div>
+      <button ng-click="sendEmail()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
+    </form>
 
 
 
