@@ -3,30 +3,55 @@
   <head>
     <title>Nextcapital Todo App</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="js/todos.js"></script>
+      <script src="js/index.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="css/index.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-  <h1>NextCapital To Do List</h1>
 
-  <h3>Please login to view/edit your To Dos.</h3>
+    <h1>NextCapital To Do List</h1>
 
-  <button id="test">click me</button>
+    <div id="login">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Log In</a></li>
+        <li role="presentation"><a href="#signup" aria-controls="signup" role="tab" data-toggle="tab">Sign Up</a></li>
+      </ul>
 
-  <form class="container-fluid vertical-center" id="login-form">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="login">
+          <form id="login-form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="submit-button"><button type="submit" class="btn btn-info btn-block">Log In</button></div>
+          </form>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="signup">
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="submit-button"><button type="submit" class="btn btn-info btn-block">Sign Up</button></div>
+          </form>
+        </div>
+      </div>
+
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-default">Login</button>
-  </form>
 
   </body>
 </html>

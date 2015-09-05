@@ -1,0 +1,8 @@
+#todo-list {
+  margin: 1em;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}

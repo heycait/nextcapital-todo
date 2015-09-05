@@ -1,3 +1,17 @@
-.form-group {
+.nav-tabs {
   width: 30%;
 }
+
+form {
+  width: 30%;
+}
+
+#signup-form, #login-form {
+  margin-top: 1em;
+}
+
+.submit-button {
+  width: 80%;
+  margin: auto;
+}
+
