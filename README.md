@@ -2,6 +2,8 @@
 
 A todo list webapp that integrates with the RESTful JSON API provided by NextCapital (http://recruiting-api.nextcapital.com).
 
+Source code: https://github.com/heycait/heycait.github.io/tree/master/nextcapital-todo
+Deployed: http://caitlyncodes.com/nextcapital-todo/
 
 ## Features
 
