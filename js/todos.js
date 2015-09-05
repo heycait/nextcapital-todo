@@ -30,6 +30,13 @@ angular.module('nextCapital', [])
 
       });
 
+$(function() {
+  $( "#sortable" ).sortable({
+    placeholder: "ui-state-highlight"
+  });
+  $( "#sortable" ).disableSelection();
+});
+
           $(document).ready(function() {
 
             var source = $("#todo-template").html();
@@ -44,6 +51,7 @@ angular.module('nextCapital', [])
                 data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
               }).done(function(response){
                 window.location.href = '/'
+                // window.location.href = '/nextcapital-todo/'
               });
             });
 
