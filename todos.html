@@ -40,7 +40,7 @@
       <ul id="sortable" class="list-unstyled">
         <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
           <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
-          <span class="done-{{todo.is_complete}}" editable-text="todo.description">{{todo.description}}</span>
+          <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
         </li>
       </ul>
     </div>

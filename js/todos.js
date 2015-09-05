@@ -34,21 +34,18 @@ angular.module('nextCapital', ["xeditable"])
           })
         };
 
-        $scope.editTodo = function(todo){
-          console.log(todo.is_complete);
-          console.log(todo.description);
-
-          alert('you edited me?!?!')
-
-          var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + todo.id;
+        $scope.editTodo = function(desc, index){
+          var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + $scope.todos[index].id;
           $http({
             method: 'PUT',
             url: link,
-            data: {api_token: sessionStorage.getItem('api_token'), todo: {description: todo.description, is_complete: todo.is_complete}}
+            data: {api_token: sessionStorage.getItem('api_token'), todo: {description: desc, is_complete: $scope.todos[index].is_complete}}
           }).success(function(response){
             console.log(response)
-            alert('you edited your todo!')
           })
+
+          // Shorter syntax ofr $http
+          // return $http.put(link, {api_token: sessionStorage.getItem('api_token'), todo: {description: desc, is_complete: $scope.todos[index].is_complete}}).success(function(response){console.log(response)});
         };
 
 

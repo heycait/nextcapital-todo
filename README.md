@@ -13,7 +13,7 @@ Users can:
 - [X] Log in
 - [X] See a list of all their todos
 - [X] Create new todos
-- [ ] Edit a todo
+- [X] Edit a todo
 - [X] Mark todos as complete
 - [X] Reorder their todos (this is just client-side)
 - [ ] Email todo list
