@@ -14,7 +14,16 @@
 
   <body ng-controller="TodoCtrl">
 
-    <button id="logout" class="btn btn-default">Logout</button>
+    <form class="form-inline" id="email-box">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List">
+        </div>
+      </div>
+      <button ng-click="sendEmail()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
+      <button id="logout" class="btn btn-default">Logout</button>
+    </form>
+
 
     <h1>Your Todos</h1>
 
@@ -37,14 +46,6 @@
       </ul>
     </div>
 
-    <form class="form-inline" id="email-box">
-      <div class="form-group">
-        <div class="input-group">
-          <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List">
-        </div>
-      </div>
-      <button ng-click="sendEmail()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
-    </form>
 
 
 
