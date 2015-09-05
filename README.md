@@ -8,13 +8,13 @@ The API is publicly accessible at http://recruiting-api.nextcapital.com. The API
 
 At a minimum, your users should be able to:
 
-[X] Sign up
-[X] Log in
-[X] See a list of all their todos
-[X] Create new todos
-[] Edit a todo
-[] Mark todos as complete
-[] Reorder their todos (this is just client-side)
+- [X] Sign up
+- [X] Log in
+- [X] See a list of all their todos
+- [X] Create new todos
+- [ ] Edit a todo
+- [ ] Mark todos as complete
+- [ ] Reorder their todos (this is just client-side)
 
 In addition, please add another feature of your choice.
 
