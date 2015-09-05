@@ -9,7 +9,6 @@ angular.module('nextCapital', [])
              });
 
         $scope.addTodo = function(){
-          alert('you clicked')
           $scope.todos.push({description: $scope.formTodo, is_complete: false});
 
           var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos';
@@ -19,14 +18,25 @@ angular.module('nextCapital', [])
             data: {api_token: sessionStorage.getItem('api_token'), todo: {description: $scope.formTodo}}
           }).success(function(response){
             console.log(response);
-            alert('stuff happened')
-            debugger
           });
         };
 
-          // $scope.markComplete = function(){
-          //   alert('you marked me!')
-          // }
+        $scope.markComplete = function(todo){
+          alert('you changed my box!');
+          console.log(todo.is_complete)
+
+          var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + todo.id;
+          $http({
+            method: 'PUT',
+            url: link,
+            data: {api_token: sessionStorage.getItem('api_token'), todo: {description: $scope.formTodo, is_complete: todo.is_complete}}
+          }).success(function(response){
+            console.log(response)
+            debugger;
+          })
+
+
+        }
 
       // Doing it this way results in the error "please sign in first" compared to doing it with jQuery/Ajax
         // $scope.logout = function(){

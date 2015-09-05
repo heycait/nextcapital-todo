@@ -38,7 +38,7 @@
     <div id="todo-list">
       <ul id="sortable" class="list-unstyled">
         <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
-          <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete()">
+          <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
           <!-- change this to call a method that marks todo as complete -->
           <span class="done-{{todo.is_complete}}">{{todo.description}}</span>
         </li>
