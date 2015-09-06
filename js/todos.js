@@ -59,15 +59,19 @@ angular.module('nextCapital', ["xeditable"])
            var params = {
                "message": {
                    "from_email": sessionStorage.getItem('email'),
-                   "to":[{"email":""}],
+                   "to":[{"email":$scope.emailAddress}],
                    "subject": "My Todo List",
-                   "text": "",
+                   "text": "My Todo List \n\n",
                }
            };
 
-           params.message.to[0].email = $scope.emailAddress;
-           params.message.text = $scope.todos;
-           debugger
+            var counter = 1;
+            for (var i = 0; i < $scope.todos.length; i++){
+              if (!$scope.todos[i].is_complete){
+                params.message.text += counter + ". " + $scope.todos[i].description + "\n";
+                counter++;
+              };
+            };
 
            email.messages.send(params, function(result) {
                console.log(result);
@@ -79,39 +83,8 @@ angular.module('nextCapital', ["xeditable"])
          };
 
       })
-      // .controller('EmailCtrl', function($scope, $http){
-
-      //   $scope.sendEmail = function(){
-      //     // create a new instance of the Mandrill class with your API key
-      //     var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
-      //     // var email = new mandrill.Mandrill(process.env.API_KEY);
-
-      //     // create a variable for the API call parameters
-      //     var params = {
-      //         "message": {
-      //             "from_email": sessionStorage.getItem('email'),
-      //             "to":[{"email":""}],
-      //             "subject": "My Todo List",
-      //             "text": "",
-      //         }
-      //     };
-
-      //     params.message.to[0].email = $scope.emailAddress;
-      //     params.message.text = $scope.todos;
-      //     debugger
-
-      //     email.messages.send(params, function(result) {
-      //         console.log(result);
-      //     }, function(error) {
-      //         console.log(error);
-      //     });
-
-
-      //   };
-
-      // })
       .run(function(editableOptions) {
-          editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+          editableOptions.theme = 'bs3';
         });
 
 $(function() {
