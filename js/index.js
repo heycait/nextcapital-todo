@@ -20,8 +20,8 @@ $(document).ready(function() {
         url: 'http://recruiting-api.nextcapital.com/users/sign_in',
         data: {email: response.email, password: response.password},
       })
-      window.location.href = '/todos.html'
-      // window.location.href = '/nextcapital-todo/todos.html'
+      // window.location.href = '/todos.html'
+      window.location.href = '/nextcapital-todo/todos.html'
     });
   });
 
@@ -41,8 +41,8 @@ $(document).ready(function() {
       sessionStorage.setItem('id', response.id);
       sessionStorage.setItem('todos', response.todos);
 
-      window.location.href = '/todos.html'
-      // window.location.href = '/nextcapital-todo/todos.html'
+      // window.location.href = '/todos.html'
+      window.location.href = '/nextcapital-todo/todos.html'
     });
   });
 });

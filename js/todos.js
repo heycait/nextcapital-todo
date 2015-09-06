@@ -52,8 +52,8 @@ angular.module('nextCapital', ["xeditable"])
 
          $scope.sendEmail = function(){
            // create a new instance of the Mandrill class with your API key
-           var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
-           // var email = new mandrill.Mandrill(process.env.API_KEY);
+           // var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
+           var email = new mandrill.Mandrill(process.env.API_KEY);
 
            // create a variable for the API call parameters
            var params = {
@@ -101,8 +101,8 @@ $('#logout').click(function(e){
     url: 'http://recruiting-api.nextcapital.com/users/sign_out',
     data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
   }).done(function(response){
-    window.location.href = '/'
-    // window.location.href = '/nextcapital-todo/'
+    // window.location.href = '/'
+    window.location.href = '/nextcapital-todo/'
   });
 });
 
