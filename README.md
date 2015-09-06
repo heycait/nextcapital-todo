@@ -1,11 +1,11 @@
 # NextCapital Todo List Challenge
 
-A todo list webapp that integrates with the RESTful JSON API provided by NextCapital (http://recruiting-api.nextcapital.com). Built on with Angular, jQuery/AJAX, and jQueryUI.
+A todo list webapp that integrates with the RESTful JSON API provided by NextCapital (http://recruiting-api.nextcapital.com). Built on top of Angular, jQuery/AJAX, and jQueryUI.
 
 Source code: https://github.com/heycait/heycait.github.io/tree/master/nextcapital-todo
 Deployed: http://caitlyncodes.com/nextcapital-todo/
 
-Note: This is my first time using Angular and working on just the client-side (as opposed to using the View provided in a Rails app). Therefore, the Angular parts of it may not be conventional/proper.
+Note: This is my first time using Angular and working on just the client-side (as opposed to using the View provided in a Rails app). Therefore the Angular parts of it may not be conventional/proper.
 
 ## Features
 
@@ -23,5 +23,5 @@ Users can:
 
 ## Stretch Goals
 - [ ] Write tests
-- [ ] Prettify-ish
+- [X] Prettify-ish
 - [ ] Responsivefy
