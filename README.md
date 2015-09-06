@@ -6,7 +6,12 @@ Source code: https://github.com/heycait/nextcapital-todo
 
 Deployed: https://nextcapital-todo-app.firebaseapp.com
 
-NOTE: This is my first time using Angular and working on just the client-side as opposed to using the View provided in a Rails app. Therefore the Angular parts of it may not be conventional/proper. And since I didn't use the Angular seed, I didn't have an associated web server and could not deploy to Heroku (thus my decision to host it on my GitHub page). I used the Python SimpleHTTPServer in development. Could eventually add a Node server or migrate over to Firebase.
+**Be sure to allow the page to load the scripts. Otherwise, you will not be able to sign-in and use the app**
+
+![Browser blocking sample](load-script.png)
+
+**NOTE**: This is my first time using Angular and working on just the client-side as opposed to using the View provided in a Rails app. Therefore the Angular parts of it may not be conventional/proper.
+
 
 ## Features
 
