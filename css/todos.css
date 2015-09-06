@@ -2,6 +2,7 @@
   margin-top: 1em;
 }
 
+
 .done-true {
   text-decoration: line-through;
   color: grey;
@@ -9,9 +10,10 @@
 
 #sortable {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 auto;
   width: 30%;
+  display: block;
 }
 
 #sortable li {
@@ -34,6 +36,7 @@
 .centered {
   display: block;
   margin: 0 auto;
+  padding: 0 auto;
 }
 
 #todo-area {

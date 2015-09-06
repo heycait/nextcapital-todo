@@ -26,10 +26,10 @@
         <button id="logout" class="btn btn-default">Logout</button>
       </form>
 
-      <div class="centered" id="todo-area">
+      <div id="todo-area">
         <h1 class="text-center">Your Todos</h1>
 
-        <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
+        <form name="newTodoForm" class="form-inline centered" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
           <div class="form-group">
             <div class="input-group">
               <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
@@ -39,8 +39,8 @@
         </form>
 
         <div id="todo-list">
-          <ul id="sortable" class="list-unstyled">
-            <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
+          <ul id="sortable" class="list-unstyled centered">
+            <li ng-repeat="todo in todos">
               <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
               <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
             </li>

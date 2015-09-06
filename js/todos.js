@@ -51,11 +51,8 @@ angular.module('nextCapital', ["xeditable"])
 
 
          $scope.sendEmail = function(){
-           // create a new instance of the Mandrill class with your API key
-           // var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
-           var email = new mandrill.Mandrill(process.env.API_KEY);
-
-           // create a variable for the API call parameters
+           var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
+           // var email = new mandrill.Mandrill(process.env.API_KEY);
            var params = {
                "message": {
                    "from_email": sessionStorage.getItem('email'),
