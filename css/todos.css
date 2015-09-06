@@ -30,3 +30,13 @@
 #email-box {
   margin-top: 1em;
 }
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+#todo-area {
+  margin-top: 5em;
+}
+

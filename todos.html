@@ -2,6 +2,7 @@
 <html ng-app="nextCapital">
   <head>
     <title>NextCapital Todo App</title>
+      <script type="text/javascript" src="js/check.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -14,9 +15,8 @@
 
   <body>
 
-    <!-- <div ng-controller="EmailCtrl"> -->
-    <div ng-controller="TodoCtrl">
-      <form class="form-inline" id="email-box" ng-submit="sendEmail()" novalidate>
+    <div ng-controller="TodoCtrl" class="container">
+      <form class="form-inline pull-right" id="email-box" ng-submit="sendEmail()" novalidate>
         <div class="form-group">
           <div class="input-group">
             <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List" required>
@@ -25,32 +25,30 @@
         <button type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
         <button id="logout" class="btn btn-default">Logout</button>
       </form>
-    </div>
 
-    <div ng-controller="TodoCtrl">
-      <h1>Your Todos</h1>
+      <div class="centered" id="todo-area">
+        <h1 class="text-center">Your Todos</h1>
 
-      <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
-        <div class="form-group">
-          <div class="input-group">
-            <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
+        <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
-      </form>
+          <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
+        </form>
 
-      <div id="todo-list">
-        <ul id="sortable" class="list-unstyled">
-          <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
-            <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
-            <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
-          </li>
-        </ul>
+        <div id="todo-list">
+          <ul id="sortable" class="list-unstyled">
+            <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
+              <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
+              <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
     </div>
-
-
   </body>
 
 
