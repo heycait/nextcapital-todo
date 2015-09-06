@@ -98,8 +98,8 @@ $('#logout').click(function(e){
     url: 'http://recruiting-api.nextcapital.com/users/sign_out',
     data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
   }).done(function(response){
-    // window.location.href = '/'
-    window.location.href = '/nextcapital-todo/'
+    window.location.href = '/'
+    // window.location.href = '/nextcapital-todo/'
   });
 });
 

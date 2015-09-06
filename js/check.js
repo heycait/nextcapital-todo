@@ -1,3 +1,4 @@
 if(!sessionStorage.getItem('email')){
-  window.location.href = '/nextcapital-todo/';
+  window.location.href = '/';
+  // window.location.href = '/nextcapital-todo/';
 };
