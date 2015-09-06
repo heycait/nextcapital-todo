@@ -18,6 +18,7 @@ angular.module('nextCapital', ["xeditable"])
             data: {api_token: sessionStorage.getItem('api_token'), todo: {description: $scope.formTodo}}
           }).success(function(response){
             console.log(response);
+            $scope.formTodo = "";
           });
         };
 
@@ -44,29 +45,71 @@ angular.module('nextCapital', ["xeditable"])
             console.log(response)
           })
 
-          // Shorter syntax ofr $http
+          // Shorter syntax for $http
           // return $http.put(link, {api_token: sessionStorage.getItem('api_token'), todo: {description: desc, is_complete: $scope.todos[index].is_complete}}).success(function(response){console.log(response)});
         };
 
 
+         $scope.sendEmail = function(){
+           // create a new instance of the Mandrill class with your API key
+           var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
+           // var email = new mandrill.Mandrill(process.env.API_KEY);
 
-      // Doing it this way results in the error "please sign in first" compared to doing it with jQuery/Ajax
-        // $scope.logout = function(){
-        //   var link = 'http://recruiting-api.nextcapital.com/users/sign_out';
+           // create a variable for the API call parameters
+           var params = {
+               "message": {
+                   "from_email": sessionStorage.getItem('email'),
+                   "to":[{"email":""}],
+                   "subject": "My Todo List",
+                   "text": "",
+               }
+           };
 
-        //   $http({
-        //     method: 'DELETE',
-        //     url: link,
-        //     data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
-        //   }).success(function(response){
-        //     console.log(response);
-        //     alert('stuff happened')
-        //     debugger
-        //     window.location.href = '/'
-        //     // window.location.href = '/nextcapital-todo/'
-        //   });
-        // }
+           params.message.to[0].email = $scope.emailAddress;
+           params.message.text = $scope.todos;
+           debugger
+
+           email.messages.send(params, function(result) {
+               console.log(result);
+           }, function(error) {
+               console.log(error);
+           });
+
+           $scope.emailAddress = '';
+         };
+
       })
+      // .controller('EmailCtrl', function($scope, $http){
+
+      //   $scope.sendEmail = function(){
+      //     // create a new instance of the Mandrill class with your API key
+      //     var email = new mandrill.Mandrill('04d0NW4LZO0Y4lLJca_iZA');
+      //     // var email = new mandrill.Mandrill(process.env.API_KEY);
+
+      //     // create a variable for the API call parameters
+      //     var params = {
+      //         "message": {
+      //             "from_email": sessionStorage.getItem('email'),
+      //             "to":[{"email":""}],
+      //             "subject": "My Todo List",
+      //             "text": "",
+      //         }
+      //     };
+
+      //     params.message.to[0].email = $scope.emailAddress;
+      //     params.message.text = $scope.todos;
+      //     debugger
+
+      //     email.messages.send(params, function(result) {
+      //         console.log(result);
+      //     }, function(error) {
+      //         console.log(error);
+      //     });
+
+
+      //   };
+
+      // })
       .run(function(editableOptions) {
           editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
         });
@@ -90,5 +133,21 @@ $('#logout').click(function(e){
   });
 });
 
+// Doing logout this way results in the error "please sign in first" compared to doing it with jQuery/Ajax
+  // $scope.logout = function(){
+  //   var link = 'http://recruiting-api.nextcapital.com/users/sign_out';
+
+  //   $http({
+  //     method: 'DELETE',
+  //     url: link,
+  //     data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
+  //   }).success(function(response){
+  //     console.log(response);
+  //     alert('stuff happened')
+  //     debugger
+  //     window.location.href = '/'
+  //     // window.location.href = '/nextcapital-todo/'
+  //   });
+  // }
 
 

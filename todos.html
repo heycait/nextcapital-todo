@@ -12,52 +12,51 @@
       <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
   </head>
 
-  <body ng-controller="TodoCtrl">
+  <body>
 
-    <form class="form-inline" id="email-box">
-      <div class="form-group">
-        <div class="input-group">
-          <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List">
+    <!-- <div ng-controller="EmailCtrl"> -->
+    <div ng-controller="TodoCtrl">
+      <form class="form-inline" id="email-box" ng-submit="sendEmail()" novalidate>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" ng-model="emailAddress" ng-model-instant class="form-control" id="" name="mandrill" placeholder="Email Todo List" required>
+          </div>
         </div>
-      </div>
-      <button ng-click="sendEmail()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
-      <button id="logout" class="btn btn-default">Logout</button>
-    </form>
-
-
-    <h1>Your Todos</h1>
-
-    <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
-      <div class="form-group">
-        <div class="input-group">
-          <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
-    </form>
-
-    <div id="todo-list">
-      <ul id="sortable" class="list-unstyled">
-        <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
-          <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
-          <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
-        </li>
-      </ul>
+        <button type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
+        <button id="logout" class="btn btn-default">Logout</button>
+      </form>
     </div>
 
+    <div ng-controller="TodoCtrl">
+      <h1>Your Todos</h1>
 
+      <form name="newTodoForm" class="form-inline" id="add-todo" ng-submit="newTodoForm.$valid && addTodo()" novalidate>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" ng-model="formTodo" ng-model-instant class="form-control" id="todo" name="todo" placeholder="Add Todo" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i></button>
+      </form>
 
+      <div id="todo-list">
+        <ul id="sortable" class="list-unstyled">
+          <li ng-repeat="todo in todos"> <!--class="ui-state-default"-->
+            <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
+            <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
+          </li>
+        </ul>
+      </div>
 
-  <script id="todo-template" type="text/x-handlebars-template">
-    <li>{{todo}}</li>
-  </script>
+    </div>
+
 
   </body>
 
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script type="text/javascript" src="js/todos.js"></script>
-  <!-- // <script src="js/mandrill.js"></script> -->
+  <script type="text/javascript" src="js/mandrill.min.js"></script>
   <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
 </html>
 
