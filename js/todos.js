@@ -51,7 +51,7 @@ angular.module('nextCapital', ["xeditable"])
 
 
          $scope.sendEmail = function(){
-            var email = new mandrill.Mandrill(process.env.API_KEY);
+           var email = new mandrill.Mandrill(process.env.API_KEY);
            var params = {
                "message": {
                    "from_email": sessionStorage.getItem('email'),
