@@ -23,6 +23,7 @@
         <button id="logout" class="btn btn-default">Logout</button>
       </form>
 
+
       <div id="todo-area">
         <h1 class="text-center">Your Todos</h1>
 
@@ -40,6 +41,8 @@
             <li ng-repeat="todo in todos">
               <input type="checkbox" ng-model="todo.is_complete" ng-change="markComplete(todo)">
               <span class="done-{{todo.is_complete}}" editable-text="todo.description" onbeforesave="editTodo($data, $index)">{{todo.description}}</span>
+              <!-- <button ng-click="deleteTodo($index)" class="btn btn-danger">Delete</button> -->
+              <button ng-click="deleteTodo($index)" class="delete-todo" class="btn btn-danger">Delete</button>
             </li>
           </ul>
         </div>

@@ -49,6 +49,29 @@ angular.module('nextCapital', ["xeditable"])
           // return $http.put(link, {api_token: sessionStorage.getItem('api_token'), todo: {description: desc, is_complete: $scope.todos[index].is_complete}}).success(function(response){console.log(response)});
         };
 
+        $scope.deleteTodo = function(index){
+          // var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + $scope.todos[index].id;
+          debugger
+          // $http({
+          //   method: 'POST',
+          //   url: link,
+          //   data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
+          // }).success(function(response){
+          //   console.log(response)
+          //   debugger
+          // })
+
+          var link = 'http://recruiting-api.nextcapital.com/users/' + sessionStorage.getItem('id') + '/todos/' + $scope.todos[index].id;
+          var request = $.ajax({
+            method: 'DELETE',
+            url: link,
+            data: {api_token: sessionStorage.getItem('api_token'), user_id: sessionStorage.getItem('id')}
+          }).done(function(response){
+            console.log('success!')
+          });
+
+        }
+
 
          $scope.sendEmail = function(){
            var email = new mandrill.Mandrill(process.env.API_KEY);
